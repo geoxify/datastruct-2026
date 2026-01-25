@@ -1,7 +1,6 @@
 package EFMGrocery;
 
 public class Product {
-    // Encapsulation: fields are private
     private String name;
     private double price;
     private double quantity;
@@ -12,7 +11,6 @@ public class Product {
         this.quantity = quantity;
     }
 
-    // A helper method to get the total cost for this specific line item
     public double getLineTotal() {
         return this.price * this.quantity;
     }
@@ -22,7 +20,8 @@ public class Product {
     }
 
     public void printReceiptLine() {
-        System.out.printf("%-5.0f %-15s %10.2f %10.2f\n",
+        // Using %-5s for quantity to prevent rounding issues like 1.5 -> 2
+        System.out.printf("%-5s %-15s %10.2f %10.2f\n",
                 this.quantity, this.name, this.price, this.getLineTotal());
     }
 }

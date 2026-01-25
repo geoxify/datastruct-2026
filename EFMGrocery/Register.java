@@ -2,7 +2,6 @@ package EFMGrocery;
 
 public class Register {
     private double currentBill;
-
     private Product[] cart;
     private int itemCount;
 
@@ -12,50 +11,49 @@ public class Register {
         this.itemCount = 0;
     }
 
-    // The register takes a product and adds its cost to the running total
     public void scanItem(Product p) {
         double itemCost = p.getLineTotal();
         this.currentBill += itemCost;
 
         if (itemCount < cart.length) {
-            cart[itemCount] = p; // Store the object
-            itemCount++; // Move to next slot
-        } else {
-            System.out.println("Cart is full!");
+            cart[itemCount] = p;
+            itemCount++;
         }
 
-        System.out.println("   > Added: " + p.getName() + " (P" + itemCost + ")");
-        System.out.println("   > Running Total: " + this.currentBill);
+        // Using BLUE for a subtle confirmation
+        System.out.println(Main.BLUE + "   > Added: " + p.getName() + " (P" + itemCost + ")" + Main.RESET);
+        System.out.println(Main.BLUE + "   > Running Total: " + this.currentBill + Main.RESET);
     }
 
     public void printReceipt() {
-        System.out.println("\n============================================");
-        System.out.println("              OFFICIAL RECEIPT              ");
-        System.out.println("============================================");
-        // Table Headers
+        // CYAN Border
+        System.out.println(Main.CYAN + "\n============================================" + Main.RESET);
+        System.out.println(Main.CYAN + "              OFFICIAL RECEIPT              " + Main.RESET);
+        System.out.println(Main.CYAN + "============================================" + Main.RESET);
+        
         System.out.printf("%-5s %-15s %10s %10s\n", "Qty", "Item", "Price", "Total");
-        System.out.println("--------------------------------------------");
+        System.out.println(Main.CYAN + "--------------------------------------------" + Main.RESET);
 
-        // Loop through the array and print each line
         for (int i = 0; i < itemCount; i++) {
             cart[i].printReceiptLine();
         }
 
-        System.out.println("--------------------------------------------");
-        System.out.printf("GRAND TOTAL: %30.2f\n", this.currentBill);
-        System.out.println("============================================");
+        System.out.println(Main.CYAN + "--------------------------------------------" + Main.RESET);
+        System.out.print("GRAND TOTAL:                   ");
+        // GREEN Total
+        System.out.println(Main.GREEN + String.format("%10.2f", this.currentBill) + Main.RESET);
+        System.out.println(Main.CYAN + "============================================" + Main.RESET);
     }
 
     public double getBillTotal() {
         return this.currentBill;
     }
 
-    // Returns the change amount, or -1 if payment is insufficient
     public double processPayment(double payment) {
         if (payment >= this.currentBill) {
             return payment - this.currentBill;
         } else {
-            return -1.0; // Indicate failure
+            return -1.0;
         }
     }
 }
