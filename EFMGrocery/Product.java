@@ -17,11 +17,12 @@ public class Product {
         return this.price * this.quantity;
     }
 
-    public void printDetails() {
-        System.out.println("--- Item Details ---");
-        System.out.println("Product: " + this.name);
-        System.out.println("Price: " + this.price);
-        System.out.println("Quantity: " + this.quantity);
-        System.out.println("Line Total: " + this.getLineTotal());
+    public String getName() {
+        return name;
+    }
+
+    public void printReceiptLine() {
+        System.out.printf("%-5.0f %-15s %10.2f %10.2f\n",
+                this.quantity, this.name, this.price, this.getLineTotal());
     }
 }

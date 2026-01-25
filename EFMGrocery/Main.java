@@ -30,7 +30,6 @@ public class Main {
 
                 // 1. Create the Product object
                 Product p = new Product(productName, price, quantity);
-                p.printDetails();
 
                 // 2. Pass the Product to the Register
                 currentRegister.scanItem(p);
@@ -42,8 +41,7 @@ public class Main {
 
             // --- Payment Section ---
             double totalBill = currentRegister.getBillTotal();
-            System.out.println("---------------------------");
-            System.out.println("FINAL BILL: " + totalBill);
+            System.out.println("\nFinal Bill: " + totalBill);
             
             double payment;
             double change;
@@ -58,10 +56,10 @@ public class Main {
 
                 if (change != -1.0) {
                     System.out.println("Change: " + change);
-                    System.out.println("Thank you for shopping!");
+                    currentRegister.printReceipt();
                     break; // Exit payment loop
                 } else {
-                    System.out.println("Error: Insufficient funds. You need " + (totalBill - payment) + " more.");
+                    System.out.println("Error: Insufficient funds.");
                 }
             }
 
