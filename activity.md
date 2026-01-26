@@ -8,16 +8,16 @@ InputInt) that will accept and return an int value
 4. a method that will compute for the salary using the formula:
 dSubTotal = (dPrice x dQty) - discount
 5. a method that will display product details and computed subtotal
+6. 
 Sample final output:
 Please Input the following:
-I
 ProductID: 123123
 Name: Chippy
 Description: Flores
 Quantity: 500
 Price: 10
-Discount:
-500
+Discount: 500
+
 12123 Chippy
 Priced at 10 for 500 pieces
 Discounted at 500
