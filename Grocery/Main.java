@@ -48,11 +48,13 @@ public class Main {
     }
 
     public static void display(int id, String name, double price, double quantity, double discount) {
-        System.out.println();
-        System.out.println(id + " " + name);
-        System.out.println("Priced at " + price + " for " + quantity + " pieces");
-        System.out.println("Discounted at " + discount);
-        System.out.println("Subtotal: " + getSubtotal(price, quantity, discount));
+        System.out.printf("""
+                
+                %d %s
+                Priced at %.0f for %.0f pieces
+                Discounted at %.0f
+                Subtotal: %.0f
+                """, id, name, price, quantity, discount, getSubtotal(price, quantity, discount));
     }
 
 }
