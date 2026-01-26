@@ -6,16 +6,16 @@ Write a program that would compute for the salary of an employee. At main, decla
 dSubTotal = (dPrice x dQty) - discount
 5. a method that will display product details and computed subtotal
 
-  Sample final output:
-  Please Input the following:
-  ProductID: 123123
-  Name: Chippy
-  Description: Flores
-  Quantity: 500
-  Price: 10
-  Discount: 500
-
-  12123 Chippy
-  Priced at 10 for 500 pieces
-  Discounted at 500
-  Subtotal: 4500
+-Sample final output:  
+Please Input the following:  
+ProductID: 123123  
+Name: Chippy  
+Description: Flores  
+Quantity: 500  
+Price: 10  
+Discount: 500  
+  
+12123 Chippy  
+Priced at 10 for 500 pieces  
+Discounted at 500  
+Subtotal: 4500  
