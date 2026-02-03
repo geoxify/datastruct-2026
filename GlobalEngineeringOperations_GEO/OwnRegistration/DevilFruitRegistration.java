@@ -1,3 +1,4 @@
+package OwnRegistration;
 import java.util.Scanner;
 
 public class DevilFruitRegistration {
