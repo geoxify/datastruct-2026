@@ -26,10 +26,10 @@ public class DevilFruitRegistration {
             String strWeakness = InputString();
 
             System.out.printf("\nIs the %s awakened?", strDevilFruitName);
-            System.out.print("\n| true | false |\n    > ");
-            boolean bAwakened = InputBoolean();
+            System.out.print("\n| t | f |\n    > ");
+            String sAwakened = InputString();
 
-            Print(strDevilFruitName, iClass, strAbility, strWeakness, bAwakened);
+            Print(strDevilFruitName, iClass, strAbility, strWeakness, sAwakened);
 
             System.out.print("\nWould you like to register another Devil Fruit? (y/n)\n    > ");
             strRegister = InputString();
@@ -48,17 +48,13 @@ public class DevilFruitRegistration {
         return sc.nextInt();
     }
 
-    public static boolean InputBoolean() {
-        boolean bValue = sc.nextBoolean();
-        sc.nextLine();
-        return bValue;
-    }
 
-    public static void Print(String name, int fruitClass, String ability, String weakness, boolean awakened) {
+
+    public static void Print(String name, int fruitClass, String ability, String weakness, String awakened) {
         System.out.println("\nSuccessfully Registered!");
 
         String strawakenedValue = "Unawakened";
-        if (awakened == true) {
+        if (awakened.equalsIgnoreCase("t")) {
             strawakenedValue = "Awakened";
         }
 
