@@ -1,0 +1,18 @@
+
+--- SESSION START ---
+User selected ID: 1
+User selected quantity: 1.0
+User selected to add another product: n
+User entered payment: 20.0
+User selected to process next customer: n
+--- SESSION END ---
+
+
+--- SESSION START ---
+User selected ID: 1
+User selected quantity: 1.0
+User selected to add another product: n
+User entered payment: 20.0
+User selected to process next customer: n
+--- SESSION END ---
+

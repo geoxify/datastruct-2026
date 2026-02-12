@@ -2,7 +2,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class DevilFruitRegistration {
+public class DFRWithTranscription { // DFR = Devil Fruit Registration
+    
     public static Scanner sc = new Scanner(System.in);
 
     public static FileWriter fw;
